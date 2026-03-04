@@ -25,6 +25,9 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+/*
+React build 포함시키는 설정 관련 START
+*/
 def webappDir = "$projectDir/src/main/test_front"
 
 processResources {
