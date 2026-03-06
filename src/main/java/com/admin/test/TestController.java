@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @GetMapping("/hello")
+    @GetMapping("/mypage")
     public String hello(){
-        return "Call Hello " + new Date();
+        return "Call mypage " + new Date();
+    }
+    @GetMapping("/work_page")
+    public String home(){
+        return "Call work_page " + new Date();
     }
 
 }
