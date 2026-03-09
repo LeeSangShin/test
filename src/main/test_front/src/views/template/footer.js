@@ -1,7 +1,12 @@
+import './css/footer.css';
 // --- 아래는 예시 컴포넌트입니다. ---
-const Footer = () => {
+function Footer() {
   return (
-    <h2>FOOTER</h2>
+    <footer className="footer">
+            <div className="contents">
+                <h2 className="title">FOOTER</h2>
+            </div>
+    </footer>
   )
 };
 

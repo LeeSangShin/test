@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 카멜케이스 매핑 활성화 -->
+        <!-- 빈 문자열/null 처리 -->
+    </settings>
+    
+    <!-- 클래스 별칭 (Alias) 설정 -->
+    <!--
+    <typeAliases>
+        <typeAlias alias="testDto" type="com.admin.dbwork.dto.Test"/>
+    </typeAliases>
+    -->
+</configuration>

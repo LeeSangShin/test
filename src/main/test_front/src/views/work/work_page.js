@@ -4,21 +4,10 @@ import React, { useState, useEffect } from 'react';
 // 실제 애플리케이션에서는 각 컴포넌트를 별도의 파일로 분리하는 것이 좋습니다.
 
 function WorkPage() {
-  const [message, setMessage] = useState('');
-  useEffect(() => {
-    fetch('/work_page')
-        .then(response => response.text())
-        .then(message =>{
-          setMessage(message);
-        });
-      }, []);
       return (
       <>
         <p>
           여기는 work 페이지입니다.
-        </p>
-        <p>
-          백엔드 서버로부터 받은 메시지: {message}
         </p>
       </>
       );

@@ -1,7 +1,6 @@
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '4.0.3'
-	id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.admin'
@@ -19,11 +18,20 @@ repositories {
 }
 
 dependencies {
-	//implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	implementation platform("org.springframework.boot:spring-boot-dependencies:4.0.3")
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	developmentOnly(platform("org.springframework.boot:spring-boot-dependencies:4.0.3"))
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// Source: https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation "org.postgresql:postgresql:42.7.10"
+	implementation "org.springframework.data:spring-data-jpa"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:4.0.1")
+	compileOnly 'org.projectlombok:lombok:1.18.42'
+	annotationProcessor 'org.projectlombok:lombok:1.18.42'
+	
 }
 
 /*

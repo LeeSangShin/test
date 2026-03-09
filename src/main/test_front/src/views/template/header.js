@@ -1,17 +1,18 @@
-import Styles from './header.module.css';
+import './css/header.css';
+import { Link } from 'react-router-dom';
 // --- 아래는 예시 컴포넌트입니다. ---
-const Header = () => {
+function Header(){
   return (
-    <header className={Styles.header}>
-      <div>
+    <header className="header">
+      <div className='contents'>
         <div>로고</div>
-        <nav>
-          <ul>
-            <li>홈</li>
-            <li>마이페이지</li>
-            <li>work페이지</li>
-          </ul>
-        </nav>
+          <nav className='navigation'>
+            <ul>
+              <li><Link to="/">홈</Link></li>
+              <li><Link to="/mypage">마이페이지</Link></li>
+              <li><Link to="/work_page">work페이지</Link></li>
+            </ul>
+          </nav>
       </div>
     </header>
   )

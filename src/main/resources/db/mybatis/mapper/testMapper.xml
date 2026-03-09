@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.admin.dbwork.mapper.TestMapper">
+
+    <select id="selectTestList" resultType="test">
+        SELECT ID
+             , NAME
+             , AGE
+             , SEX_CD
+        FROM TEST
+    </select>
+
+    <select id="selectTestById" parameterType="test" resultType="test">
+        SELECT ID
+             , NAME
+             , AGE
+             , SEX_CD
+        FROM TEST
+        WHERE id = #{searchId}
+    </select>
+
+</mapper>
