@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.admin.dbwork.dto.Test;
-import com.admin.dbwork.service.TestService;
+import com.admin.dbwork.dto.User;
+import com.admin.dbwork.service.UserService;
 
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
 
 @Autowired
-private TestService testService;
+private UserService testService;
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/mypage")
@@ -43,17 +43,23 @@ private TestService testService;
 
     @GetMapping("/getAllUser")
     public Map getAllUser() {
-        List<Test> tests = testService.getAllUser();
-        for(Test test : tests){
-            log.debug(test.toString());
+        List<User> users = testService.getAllUser();
+        for(User user : users){
+            log.debug(user.toString());
         }
-        return Map.of("tests", tests);
+        return Map.of("users", users);
     }
     
     @PostMapping("/getUserById")
-    public Test getUserById(@RequestBody Test param) {
+    public User getUserById(@RequestBody User param) {
         log.debug("getUserById param: {}", param);
-        Test test = testService.getUserById(param);
-        return test;
+        User user = testService.getUserById(param);
+        return user;
+    }
+
+    @PostMapping("/createUser")
+    public void createUser(@RequestBody User param) {
+        log.debug("createUser param: {}", param);
+        int result = testService.createUser(param);
     }
 }

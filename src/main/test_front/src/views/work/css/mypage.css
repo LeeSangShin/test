@@ -1,0 +1,11 @@
+p {
+    @apply font-bold;
+}
+h2 {
+    @apply font-bold text-3xl;
+}
+button {
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded-lg;
+    @apply hover:bg-blue-600 active:bg-blue-700;
+    @apply transition duration-300 ease-in-out;
+}

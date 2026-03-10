@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './main.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './views/work/home';
 import MyPage from './views/work/mypage';
 import WorkPage from './views/work/work_page';
+import GridPage from './views/work/grid_page.js';
 import Layout from './views/template/layout.js';
 import reportWebVitals from './reportWebVitals';
 
@@ -16,6 +17,7 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/work_page" element={<WorkPage />} />
+          <Route path="/GridPage" element={<GridPage />} />
         </Routes>
       </Layout>
       </BrowserRouter>

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.admin.dbwork.mapper.TestMapper">
+<mapper namespace="com.admin.dbwork.mapper.UserMapper">
 
-    <select id="selectTestList" resultType="test">
-        SELECT ID
+    <select id="selectUserList" resultType="user">
+        SELECT ROW_NUMBER() OVER() as ROWNUM
+             , ID
              , NAME
              , AGE
              , SEX_CD
         FROM TEST
     </select>
 
-    <select id="selectTestById" parameterType="test" resultType="test">
+    <select id="selectUserById" parameterType="user" resultType="user">
         SELECT ID
              , NAME
              , AGE
@@ -20,4 +21,19 @@
         WHERE id = #{searchId}
     </select>
 
+    <insert id="createUser" parameterType="user">
+        INSERT INTO TEST(ID
+             , NAME
+             , AGE
+             , SEX_CD
+             , CREATE_DATE
+             , UPDATE_DATE)
+        VALUES(#{id}
+            , #{name}
+            , CAST (#{age} AS INTEGER)
+            , #{sexCd}
+            , NOW()
+            , NOW()
+        )
+    </insert>
 </mapper>

@@ -11,6 +11,7 @@ function Header(){
               <li><Link to="/">홈</Link></li>
               <li><Link to="/mypage">마이페이지</Link></li>
               <li><Link to="/work_page">work페이지</Link></li>
+              <li><Link to="/GridPage">Grid페이지</Link></li>
             </ul>
           </nav>
       </div>
